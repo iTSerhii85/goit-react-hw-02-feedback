@@ -3,13 +3,13 @@ import React from "react";
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     return (
     <div>
-        {options.map(key => {
+        {options.map(name => {
             return (
             <button
              type="button"
-             onClick={() => onLeaveFeedback(key)}
-             key={key}>
-                {key}
+             onClick={() => onLeaveFeedback(name)}
+             key={name}>
+                {name}
             </button>)})}
     </div>
     )

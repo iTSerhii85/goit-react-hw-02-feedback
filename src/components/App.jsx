@@ -13,28 +13,30 @@ export class App extends React.Component {
     bad: 0,
   };
 
-  onLeaveFeedback = (key) => {
-    if (key === 'good') {
-      this.setState((prevState) => ({
-        good: prevState.good + 1
-      }));
-    }
-    if (key === 'neutral') {
-      this.setState((prevState) => ({
-        neutral: prevState.neutral +1
-      }));
-    }
-    if (key === 'bad') {
-      this.setState((prevState) => ({
-        bad: prevState.bad + 1,
-      }));
-    }
+  onLeaveFeedback = (name) => {
+    this.setState((prevState) => ({
+      [name]: prevState[name] +1
+    }));
+    // if (name === 'good') {
+    //   this.setState((prevState) => ({
+    //     good: prevState.good + 1
+    //   }));
+    // }
+    // if (name === 'neutral') {
+    //   this.setState((prevState) => ({
+    //     neutral: prevState.neutral +1
+    //   }));
+    // }
+    // if (name === 'bad') {
+    //   this.setState((prevState) => ({
+    //     bad: prevState.bad + 1,
+    //   }));
+    // }
   };
 
   render(){
-    const optionNames = ['good', 'neutral', 'bad'];
-
     const { good, neutral, bad } = this.state;
+    const optionNames = Object.keys(this.state);
 
     const countTotalFeedback = good + neutral + bad;
     const countPositiveFeedbackPercentage = Math.round(good / countTotalFeedback * 100);
