@@ -1,16 +1,17 @@
 import React from "react";
+import { Button, ButtonBlock } from "./FeedbackOptions.styled";
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
     return (
-    <div>
+    <ButtonBlock>
         {options.map(name => {
             return (
-            <button
+            <Button
              type="button"
              onClick={() => onLeaveFeedback(name)}
              key={name}>
                 {name}
-            </button>)})}
-    </div>
+            </Button>)})}
+    </ButtonBlock>
     )
 }
