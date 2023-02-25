@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from "react";
 
 export const Section = ({ title, children }) => {
@@ -8,3 +9,7 @@ export const Section = ({ title, children }) => {
     </div>
     )
 };
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired
+}
